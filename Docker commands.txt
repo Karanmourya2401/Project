@@ -1,0 +1,60 @@
+
+docker pull <image>:
+This command downloads a Docker image from a registry. For example, docker pull ubuntu would fetch the official Ubuntu image.
+
+docker run <options> <image>:
+This command starts a new container based on the specified image.
+Example: docker run -it ubuntu bash would run a new Ubuntu container and start an interactive shell.
+
+docker ps:
+Lists all running containers.
+
+docker ps -a:
+Lists all containers, including stopped ones.
+
+docker stop <container>:
+Stops a running container. You can use the container name or its ID.
+
+docker start <container>:
+Starts a stopped container.
+
+docker restart <container>:
+Restarts a running or stopped container.
+
+docker rm <container>:
+Removes a stopped container. You can specify either the container name or its ID.
+
+docker images or docker image ls:
+Lists all Docker images on your system.
+docker rmi <image>:
+
+Removes a Docker image from your system.
+
+docker exec -it <container> <command>:
+Executes a command in a running container. The -it flag makes it interactive.
+Example: docker exec -it mycontainer sh would start a shell in the running "mycontainer."
+
+docker build -t <tag> <path_to_Dockerfile>:
+Builds a Docker image from a Dockerfile in the specified directory.
+Example: docker build -t myimage:1.0 . would build an image with the tag "myimage" and version "1.0" from the current directory's Dockerfile.
+
+docker push <image>:
+Pushes a Docker image to a registry, such as Docker Hub or a private registry.
+
+docker pull <image>:
+Pulls a Docker image from a registry.
+
+docker logs <container>:
+Displays the logs of a specific container. You can use this to see the output of running processes within a container.
+
+docker network ls:
+Lists all Docker networks on your system.
+
+docker volume ls:
+Lists all Docker volumes on your system.
+
+docker-compose up:
+Starts services defined in a Docker Compose file, creating and running containers based on the specified configuration.
+
+docker-compose down:
+Stops and removes containers defined in a Docker Compose file.
