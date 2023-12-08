@@ -1,0 +1,140 @@
+
+docker pull <image>:
+This command downloads a Docker image from a registry. For example, docker pull ubuntu would fetch the official Ubuntu image.
+
+docker run <options> <image>:
+This command starts a new container based on the specified image.
+Example: docker run -it ubuntu bash would run a new Ubuntu container and start an interactive shell.
+
+docker ps:
+Lists all running containers.
+
+docker ps -a:
+Lists all containers, including stopped ones.
+
+docker stop <container>:
+Stops a running container. You can use the container name or its ID.
+
+docker start <container>:
+Starts a stopped container.
+
+docker restart <container>:
+Restarts a running or stopped container.
+
+docker rm <container>:
+Removes a stopped container. You can specify either the container name or its ID.
+
+docker images or docker image ls:
+Lists all Docker images on your system.
+docker rmi <image>:
+
+Removes a Docker image from your system.
+
+docker exec -it <container> <command>:
+Executes a command in a running container. The -it flag makes it interactive.
+Example: docker exec -it mycontainer sh would start a shell in the running "mycontainer."
+
+docker build -t <tag> <path_to_Dockerfile>:
+Builds a Docker image from a Dockerfile in the specified directory.
+Example: docker build -t myimage:1.0 . would build an image with the tag "myimage" and version "1.0" from the current directory's Dockerfile.
+
+docker push <image>:
+Pushes a Docker image to a registry, such as Docker Hub or a private registry.
+
+docker pull <image>:
+Pulls a Docker image from a registry.
+
+docker logs <container>:
+Displays the logs of a specific container. You can use this to see the output of running processes within a container.
+
+docker network ls:
+Lists all Docker networks on your system.
+
+docker volume ls:
+Lists all Docker volumes on your system.
+
+docker-compose up:
+Starts services defined in a Docker Compose file, creating and running containers based on the specified configuration.
+
+docker-compose down:
+Stops and removes containers defined in a Docker Compose file.
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+Container Orchestration: Kubernetes is an open-source container orchestration platform that automates the deployment, scaling, and management of containerized applications.
+
+Containers: It works with containers (e.g., Docker) to package and isolate applications, ensuring consistency across various environments.
+
+Nodes: Kubernetes clusters consist of nodes, which are the physical or virtual machines that run containerized applications.
+
+Pods: The smallest deployable units in Kubernetes, containing one or more containers that share storage and network resources.
+
+Yaml file: In Kubernetes, YAML (YAML Ain't Markup Language) files are commonly used to define and configure resources. These files are human-readable and are used to specify the desired state of Kubernetes objects.
+
+Deployments: Define and manage the desired state of applications, facilitating easy scaling, rolling updates, and rollbacks.
+
+Services: Enable communication and discovery between different parts of an application, allowing for dynamic scaling and load balancing.
+
+Replication Controllers: Ensure a specified number of replicas (pods) are running, automatically replacing failed ones.
+
+ConfigMaps and Secrets: Manage configuration settings and sensitive information separately from application code.
+
+Labels and Selectors: Used to organize and select subsets of resources, facilitating grouping and management.
+
+Namespaces: Logical partitions within a cluster, allowing multiple teams or projects to share the same cluster safely.
+
+Kubelet: Agent running on each node, responsible for maintaining the containers' lifecycle and reporting back to the control plane.
+
+Control Plane Components: Includes the API server, etcd (key-value store), controller manager, and scheduler, collectively managing the cluster state.
+
+Storage Orchestration: Kubernetes manages storage systems and provides persistent storage for containerized applications.
+
+Security: Implements role-based access control (RBAC) to regulate access to the cluster resources and ensures a secure container environment.
+
+Cloud-Native: Designed to work seamlessly across various cloud providers and on-premises environments.
+
+Extensibility: Supports extension mechanisms for integrating with custom resources and controllers.
+
+Declarative Configuration: Describes the desired state of the system, and Kubernetes works to achieve and maintain that state.
+
+Community and Ecosystem: Has a vibrant community and ecosystem, with a wide range of third-party tools and integrations.
+
+///////////
+
+Kubernetes Architecture
+
+
+Master Node:
+
+Kube-apiserver: This is the central component that exposes the Kubernetes API. It handles API requests, validates them, and then executes them.
+
+etcd: A distributed key-value store that stores the cluster's configuration data, representing the state of the entire Kubernetes cluster.
+
+Kube-scheduler: This component watches for newly created Pods with no assigned node and selects a node for them to run on. It considers factors like resource requirements, node affinity, and anti-affinity.
+
+Kube-controller-manager: It runs controller processes that regulate the state of the system. Examples include the Replication Controller, Endpoints Controller, and Service Account & Token Controllers.
+
+Node (Minion) Node:
+
+Kubelet: The primary agent running on each node, responsible for making sure that containers are running in a Pod.
+
+Kube-proxy: Maintains network rules on nodes. It performs network address translation (NAT) for Service IPs to expose Services to the external world.
+
+Container runtime: The software responsible for running containers. Common container runtimes include Docker and containerd.
+
+Pod:
+The smallest and simplest Kubernetes object. It represents a single instance of a running process in a cluster and can consist of one or more containers.
+
+Controller:
+Controllers are control loops that regulate the state of the system by managing the replication of Pods, ensuring that the desired state matches the actual state.
+
+Service:
+A Kubernetes Service is an abstraction that defines a set of Pods and a policy by which to access them. It provides a stable endpoint (IP address and port) to access the Pods, even if they are dynamically scaled or replaced.
+
+
